@@ -712,7 +712,7 @@ def create_vm(vsphere_client, module, esxi, resource_pool, cluster_name, guest, 
                    v in vsphere_client.get_hosts().items() if v == esxi_hostname][0]
     except IndexError, e:
         vsphere_client.disconnect()
-        module.fail_json(msg="Cannot find esx host named: %s" % esxi_hostname)
+        module.fail_json(msg="Cannot peos find esx host named: %s" % esxi_hostname)
 
     # Grab the computerResource managed object reference of the host we are
     # creating the VM on.
